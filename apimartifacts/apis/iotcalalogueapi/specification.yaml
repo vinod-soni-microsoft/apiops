@@ -1,0 +1,217 @@
+openapi: 3.0.1
+info:
+  title: IoTCalalogueAPI
+  version: v1
+servers:
+  - url: https://apim-dev-2023.azure-api.net/v1
+paths:
+  /IoTDeviceCatalogue:
+    get:
+      tags:
+        - IoTDeviceCatalogue
+      summary: GetCatalogue
+      operationId: GetCatalogue
+      responses:
+        '200':
+          description: Success
+    post:
+      tags:
+        - IoTDeviceCatalogue
+      summary: AddDevice
+      operationId: AddDevice
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IoTDevice'
+            example:
+              id: 0
+              model: string
+              deviceType: string
+              price: 0
+              isEdge: true
+          text/json:
+            schema:
+              $ref: '#/components/schemas/IoTDevice'
+            example:
+              id: 0
+              model: string
+              deviceType: string
+              price: 0
+              isEdge: true
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/IoTDevice'
+            example:
+              id: 0
+              model: string
+              deviceType: string
+              price: 0
+              isEdge: true
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              examples:
+                default:
+                  value: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              example:
+                id: 0
+                model: string
+                deviceType: string
+                price: 0
+                isEdge: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              example:
+                id: 0
+                model: string
+                deviceType: string
+                price: 0
+                isEdge: true
+  '/IoTDeviceCatalogue/{deviceId}':
+    get:
+      tags:
+        - IoTDeviceCatalogue
+      summary: GetDevice
+      operationId: GetDevice
+      parameters:
+        - name: deviceId
+          in: path
+          description: Format - int32.
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              examples:
+                default:
+                  value: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              example:
+                id: 0
+                model: string
+                deviceType: string
+                price: 0
+                isEdge: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              example:
+                id: 0
+                model: string
+                deviceType: string
+                price: 0
+                isEdge: true
+    delete:
+      tags:
+        - IoTDeviceCatalogue
+      summary: DeleteDevice
+      operationId: DeleteDevice
+      parameters:
+        - name: deviceId
+          in: path
+          description: Format - int32.
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+  '/IoTDeviceCatalogue/{deviceId}/{newPrice}':
+    put:
+      tags:
+        - IoTDeviceCatalogue
+      summary: UpdatePrice
+      operationId: UpdatePrice
+      parameters:
+        - name: deviceId
+          in: path
+          description: Format - int32.
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: newPrice
+          in: path
+          description: Format - double.
+          required: true
+          schema:
+            type: number
+            format: double
+      responses:
+        '200':
+          description: Success
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              examples:
+                default:
+                  value: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              example:
+                id: 0
+                model: string
+                deviceType: string
+                price: 0
+                isEdge: true
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IoTDevice'
+              example:
+                id: 0
+                model: string
+                deviceType: string
+                price: 0
+                isEdge: true
+components:
+  schemas:
+    IoTDevice:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        model:
+          type: string
+          nullable: true
+        deviceType:
+          type: string
+          nullable: true
+        price:
+          type: number
+          format: double
+        isEdge:
+          type: boolean
+      additionalProperties: false
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
