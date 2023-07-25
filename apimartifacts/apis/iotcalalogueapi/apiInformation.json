@@ -10,7 +10,7 @@
     "protocols": [
       "https"
     ],
-    "serviceUrl": "https://iotcatalogue.azurewebsites.net/",
+    "serviceUrl": "https://apim-dev-2023.azure-api.net/v1",
     "subscriptionKeyParameterNames": {
       "header": "Ocp-Apim-Subscription-Key",
       "query": "subscription-key"
