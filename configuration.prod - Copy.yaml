@@ -1,0 +1,49 @@
+apimServiceName: apim-prod-2023
+namedValues:
+  - name: environment
+    properties:
+      displayName: environment
+      value: prod
+  - name: demo
+    properties:
+      displayName: demo
+      value: demo message new again again
+  - name: TimeNow
+    properties:
+      displayName: TimeNow
+      value: "@(DateTime2.Now.ToString())"
+  - name: testSecret
+    properties:
+      displayName: testSecret
+      value: "{#testSecretValue#}"
+  - name: signingKey
+    properties:
+      displayName: signingKey
+      keyVault: 
+        secretIdentifier: https://red-scus-apimdemo-kv-prd.vault.azure.net/secrets/APIM-signing-key
+  - name: 639121f85ddd1701d02ea23f
+    properties:
+      displayName: Logger-Credentials--639121f85ddd1701d02ea240
+      value: "{#appInsightsLoggerKey#}"
+loggers:
+    - name: red-scus-apim-ai-dev
+      properties:
+        loggerType: applicationInsights
+        description: App insights logger info
+        resourceId: "/subscriptions/8c2cd9b8-22c8-45bf-b410-daa03c9dde31/resourceGroups/rg-apim-prod/providers/microsoft.insights/components/red-scus-apim-ai-prd"
+        credentials:
+          instrumentationKey: "{{Logger-Credentials--639121f85ddd1701d02ea240}}"
+        isBuffered: true
+diagnostics:
+    - name: applicationinsights
+      properties:
+        verbosity: Error
+        loggerId: "/subscriptions/8c2cd9b8-22c8-45bf-b410-daa03c9dde31/resourceGroups/rg-apim-dev/providers/Microsoft.ApiManagement/service/apim-dev-2023/loggers/red-scus-apim-ai-dev"
+apis:
+  - name: "echo-api"
+    diagnostics:
+      - name: applicationinsights
+        properties:
+          verbosity: Error
+          loggerId: "/subscriptions/8c2cd9b8-22c8-45bf-b410-daa03c9dde31/resourceGroups/rg-apim-dev/providers/Microsoft.ApiManagement/service/apim-dev-2023/loggers/red-scus-apim-ai-dev"
+        
