@@ -20,7 +20,6 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
         - name: b
           in: query
           description: Second operand. Default value is <code>49</code>.
@@ -29,10 +28,9 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
       responses:
         '200':
-          description: 
+          description: ''
   /sub:
     get:
       summary: Subtract two integers
@@ -47,7 +45,6 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
         - name: b
           in: query
           description: Second operand. Default value is <code>49</code>.
@@ -56,10 +53,9 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
       responses:
         '200':
-          description: 
+          description: ''
   /mul:
     get:
       summary: Multiply two integers
@@ -74,7 +70,6 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
         - name: b
           in: query
           description: Second operand. Default value is <code>49</code>.
@@ -83,10 +78,9 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
       responses:
         '200':
-          description: 
+          description: ''
   /div:
     get:
       summary: Divide two integers
@@ -101,7 +95,6 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
         - name: b
           in: query
           description: Second operand. Default value is <code>49</code>.
@@ -110,10 +103,9 @@ paths:
             enum:
               - ''
             type: string
-            default: ''
       responses:
         '200':
-          description: 
+          description: ''
 components:
   securitySchemes:
     apiKeyHeader:
