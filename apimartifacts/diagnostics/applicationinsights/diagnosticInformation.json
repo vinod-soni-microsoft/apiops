@@ -27,7 +27,6 @@
     },
     "httpCorrelationProtocol": "Legacy",
     "logClientIp": true,
-    "loggerId": "/subscriptions/8c2cd9b8-22c8-45bf-b410-daa03c9dde31/resourceGroups/rg-apim-dev/providers/Microsoft.ApiManagement/service/apim-dev-2023/loggers/apim-dev-2023",
     "sampling": {
       "percentage": 100,
       "samplingType": "Fixed"
