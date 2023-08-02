@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "credentials": {
+      "instrumentationKey": "{{Logger-Credentials--64c02acc217d20198c49720a}}"
+    },
+    "isBuffered": true,
+    "loggerType": "applicationInsights",
+    "resourceId": "/subscriptions/8c2cd9b8-22c8-45bf-b410-daa03c9dde31/resourceGroups/rg-apim-dev/providers/microsoft.insights/components/apim-dev-2023"
+  }
+}
