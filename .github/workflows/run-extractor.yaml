@@ -118,7 +118,7 @@ jobs:
       - uses: actions/checkout@v3
           
       - name: Download artifacts-from-portal
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         env:
           API_MANAGEMENT_SERVICE_OUTPUT_FOLDER_PATH: apimartifacts  # change this to the artifacts folder  
         with:
